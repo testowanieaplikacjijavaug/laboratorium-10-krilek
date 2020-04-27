@@ -28,8 +28,8 @@ public class StackOverflowTest {
 	public void setUpDriver(){
 		System.setProperty("webdriver.chrome.driver", "resources/chromedriver" + (System.getProperty("os.name").toLowerCase().contains("win") ? ".exe" : "" ));
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
-        options.addArguments("--lang=en");
+        options.addArguments("--lang=en", "--no-sandbox", "--headless", "--disable-dev-shm-usage");
+		options.setHeadless(true);
 		driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://stackoverflow.com/users/login");
