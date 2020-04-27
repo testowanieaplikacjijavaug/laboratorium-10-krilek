@@ -26,7 +26,7 @@ public class XPathTest {
             System.setProperty("webdriver.gecko.driver", "resources/geckodriver" + (System.getProperty("os.name").toLowerCase().contains("win") ? ".exe" : "" ));
             FirefoxOptions options = new FirefoxOptions();
             options.setHeadless(true);
-            options.addPreference("intl.accept_languages", "en");
+//            options.addPreference("intl.accept_languages", "en");
             driver = new FirefoxDriver(options);
             // Implicity wait -> max czas na znalezienie elementu na stronie
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
