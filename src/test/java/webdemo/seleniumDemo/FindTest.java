@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class FindTest {
 	
@@ -22,7 +23,10 @@ public class FindTest {
 	@BeforeAll
 	public static void setUpDriver(){
 		System.setProperty("webdriver.gecko.driver", "resources/geckodriver.exe");
-		driver = new FirefoxDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        options.setHeadless(true);
+        options.addPreference("intl.accept_languages", "en");
+		driver = new FirefoxDriver(options);
 		// Implicity wait -> max czas na znalezienie elementu na stronie
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
