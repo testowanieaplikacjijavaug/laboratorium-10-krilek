@@ -21,7 +21,7 @@ public class GoogleTest {
 
 	@BeforeAll
 	public static void setUpDriver(){
-		System.setProperty("webdriver.gecko.driver", "resources/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "resources/geckodriver" + (System.getProperty("os.name").toLowerCase().contains("win") ? ".exe" : "" ));
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
         options.addPreference("intl.accept_languages", "en");
